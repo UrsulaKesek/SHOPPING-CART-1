@@ -9,7 +9,7 @@ body {
   height: 4300px;
 }
 .header1 {
-  background-image: url("/Images/IMG_1542.jpg");
+  background-image:url("/Images/IMG_1542.jpg");
   background-size: cover;
   padding: 50px;
   color: white;
