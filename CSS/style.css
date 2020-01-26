@@ -9,7 +9,7 @@ body {
   height: 4300px;
 }
 .header1 {
-  background-image:url("/Images/IMG_1542.jpg");
+  background-image: url("/Images/IMG_1542.jpg");
   background-size: cover;
   padding: 50px;
   color: white;
@@ -238,7 +238,7 @@ a.cart:hover {
   height: 200px;
   margin: 20px;
   border: 3px solid magenta;
-  background-color: rgba(249, 6, 119,1);
+  background-color: rgba(249, 6, 119, 1);
 }
 .total-price {
   background: -webkit-gradient(
