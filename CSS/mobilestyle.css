@@ -223,10 +223,10 @@
     font-size: 1em;
     text-align: center;
   }
-  .sb-total{
-    display:flex;
+  .sb-total {
+    display: flex;
     flex-direction: column;
-    height:300px;
+    height: 300px;
   }
   .total-price {
     background: -webkit-gradient(
@@ -244,22 +244,21 @@
     text-align: center;
     cursor: pointer;
   }
-.sb-total h3 {
-  font-weight: bold;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    from(#fae604),
-    to(#03f377)
-  );
-  border-radius: 15px;
-  border: 2px solid black;
-  margin:30px;
-  padding: 15px 20px;
-  text-align: center;
-
-}
+  .sb-total h3 {
+    font-weight: bold;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(#fae604),
+      to(#03f377)
+    );
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 30px;
+    padding: 15px 20px;
+    text-align: center;
+  }
   .extrainfo {
     height: 70px;
   }
@@ -323,7 +322,7 @@
     border-radius: 50px;
     -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
     -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 3px 0;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
     color: #0e0d0e;
     font-size: 22px;
@@ -360,7 +359,7 @@
     border-radius: 50px;
     -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
     -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 3px 0;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
     color: white;
     font-size: 0.75em;
