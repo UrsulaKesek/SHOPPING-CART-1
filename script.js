@@ -14,7 +14,8 @@ function removeSbItem(event) {
   buttonClicked.parentElement.parentElement.remove();
   updateSbTotal();
 }
-//Update Shopping Basket Total// 
+//Update Shopping Basket Total//
+
 function updateSbTotal() {
   let shoppingBasket = document.getElementsByClassName("basket")[0];
   let sbRows = shoppingBasket.getElementsByClassName("sb-row");
@@ -58,6 +59,7 @@ function quantityChanged(event) {
 }
 
 //Add items to the shopping basket and update the shopping basket//
+
 let addToSbButtons = document.getElementsByClassName("add");
 for (let i = 0; i < addToSbButtons.length; i++) {
   let button = addToSbButtons[i];
@@ -65,7 +67,8 @@ for (let i = 0; i < addToSbButtons.length; i++) {
 }
 updateSbTotal();
 
-//Buy the items,clear the basket and leave a thank you message//
+//Buy the items,clear the basket and leave a "thank you" message//
+
 document
   .getElementsByClassName("purchase")[0]
   .addEventListener("click", purchaseClicked);
@@ -79,6 +82,7 @@ function purchaseClicked() {
   updateSbTotal();
 }
 //Add items to the shopping basket and update the total//
+
 function addToSbClicked(event) {
   let button = event.target;
   let basket = button.parentElement.parentElement;
@@ -108,7 +112,7 @@ function addItemToSb(imgSrc, item, price) {
   }
   /*creates an item in the shopping basket which can be removed or have it's
   quantity changed*/
-  
+
   let sbContents = `
     <div class="sb-itemFT sb-column">
       <img
