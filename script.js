@@ -1,3 +1,5 @@
+//remove items from the shopping basket//
+
 let removeSbItemButtons = document.getElementsByClassName("remove");
 console.log(removeSbItemButtons);
 
@@ -12,7 +14,7 @@ function removeSbItem(event) {
   buttonClicked.parentElement.parentElement.remove();
   updateSbTotal();
 }
-
+//Update Shopping Basket Total// 
 function updateSbTotal() {
   let shoppingBasket = document.getElementsByClassName("basket")[0];
   let sbRows = shoppingBasket.getElementsByClassName("sb-row");
@@ -39,6 +41,7 @@ function updateSbTotal() {
     total.toFixed(0) / 6.99
   ).toFixed(0);
 }
+//Change the quantity of each item and update the shopping basket//
 
 let quantityInputs = document.getElementsByClassName("sb-qty-input");
 for (let i = 0; i < quantityInputs.length; i++) {
@@ -53,6 +56,8 @@ function quantityChanged(event) {
   }
   updateSbTotal();
 }
+
+//Add items to the shopping basket and update the shopping basket//
 let addToSbButtons = document.getElementsByClassName("add");
 for (let i = 0; i < addToSbButtons.length; i++) {
   let button = addToSbButtons[i];
@@ -60,6 +65,7 @@ for (let i = 0; i < addToSbButtons.length; i++) {
 }
 updateSbTotal();
 
+//Buy the items,clear the basket and leave a thank you message//
 document
   .getElementsByClassName("purchase")[0]
   .addEventListener("click", purchaseClicked);
@@ -72,7 +78,7 @@ function purchaseClicked() {
   }
   updateSbTotal();
 }
-
+//Add items to the shopping basket and update the total//
 function addToSbClicked(event) {
   let button = event.target;
   let basket = button.parentElement.parentElement;
@@ -85,6 +91,8 @@ function addToSbClicked(event) {
 
   updateSbTotal();
 }
+/*creates items in the shopping basket and lets you know 
+if an item is already there, and update the basket*/
 
 function addItemToSb(imgSrc, item, price) {
   let sbRow = document.createElement("div");
@@ -98,7 +106,9 @@ function addItemToSb(imgSrc, item, price) {
     }
     updateSbTotal();
   }
-
+  /*creates an item in the shopping basket which can be removed or have it's
+  quantity changed*/
+  
   let sbContents = `
     <div class="sb-itemFT sb-column">
       <img
