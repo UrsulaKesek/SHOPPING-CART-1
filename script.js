@@ -44,6 +44,7 @@ function updateSbTotal() {
 }
 //Change the quantity of each item and update the shopping basket//
 
+
 let quantityInputs = document.getElementsByClassName("sb-qty-input");
 for (let i = 0; i < quantityInputs.length; i++) {
   let input = quantityInputs[i];
@@ -52,8 +53,8 @@ for (let i = 0; i < quantityInputs.length; i++) {
 
 function quantityChanged(event) {
   let input = event.target;
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
+  if (isNaN(input.value) || input.value <= -1) {
+    input.value = 0;
   }
   updateSbTotal();
 }
