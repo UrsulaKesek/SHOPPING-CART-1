@@ -38,9 +38,8 @@ function updateSbTotal() {
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-price")[0].innerText =
     "£" + total.toFixed(2);
-  document.getElementsByClassName("things")[0].innerText = (
-    total.toFixed(0) / 6.99
-  ).toFixed(0);
+  document.getElementsByClassName("things")[0].innerText = "£"
+   + total.toFixed(2);
 }
 //Change the quantity of each item and update the shopping basket//
 
