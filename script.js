@@ -24,11 +24,9 @@ function updateSbTotal() {
     let sbRow = sbRows[i];
     let priceElement = sbRow.getElementsByClassName("sb-price")[0];
     let qtyElement = sbRow.getElementsByClassName("sb-qty-input")[0];
-
     console.log(priceElement, qtyElement);
 
     let price = parseFloat(priceElement.innerText.replace("£", ""));
-
     console.log(price);
 
     let quantity = qtyElement.value;
@@ -38,12 +36,11 @@ function updateSbTotal() {
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-price")[0].innerText =
     "£" + total.toFixed(2);
-  document.getElementsByClassName("things")[0].innerText = "£"
-   + total.toFixed(2);
+  document.getElementsByClassName("things")[0].innerText = 
+   total.toFixed(2);
 }
+
 //Change the quantity of each item and update the shopping basket//
-
-
 let quantityInputs = document.getElementsByClassName("sb-qty-input");
 for (let i = 0; i < quantityInputs.length; i++) {
   let input = quantityInputs[i];
