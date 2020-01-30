@@ -112,6 +112,7 @@ nav a:hover {
 }
 .home-section,
 .about-section {
+  height: 250px;
   padding: 20px;
   background-color: rgba(249, 6, 119, 1);
   color: white;
