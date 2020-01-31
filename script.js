@@ -53,9 +53,9 @@ function quantityChanged(event) {
   }
   for (let i = 0; i < quantityInputs.length; i++) {
     if (quantityInputs.length < 1) {
-      return i + input.value ;
+      return i + input.value;
     }
-  
+
     console.log(quantityInputs.length);
   }
   document.getElementsByClassName("things")[0].innerText =
