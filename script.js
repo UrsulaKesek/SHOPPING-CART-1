@@ -52,10 +52,12 @@ function quantityChanged(event) {
     input.value = 0;
   }
   for (let i=0; i < quantityInputs.length; i++){
-    quantityInputs[i] = 0;
+   if (quantityInputs.length = i){
+     return i 
+   };
   }
   document.getElementsByClassName("things")[0].innerText = 
-  (quantityInputs.value + input.value);
+  (quantityInputs + input.value);
 
   updateSbTotal();
 }
