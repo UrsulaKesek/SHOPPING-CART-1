@@ -35,10 +35,9 @@ function updateSbTotal() {
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-price")[0].innerText =
     "£" + total.toFixed(2);
-  document.getElementsByClassName("things")[0].innerText =
-   (total.toFixed(0)/6.99).toFixed(0);
+    document.getElementsByClassName("things")[0].innerText =
+     (total.toFixed(2)/6.99).toFixed(0);
 }
-
 
 let quantityInputs = document.getElementsByClassName("sb-qty-input");
 for (let i = 0; i < quantityInputs.length; i++) {
