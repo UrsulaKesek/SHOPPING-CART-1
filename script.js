@@ -37,7 +37,7 @@ function updateSbTotal() {
   document.getElementsByClassName("total-price")[0].innerText =
     "£" + total.toFixed(2);
     document.getElementsByClassName("things")[0].innerText =
-    "£" + total.toFixed(2);
+     (total.toFixed(2)/6.99).toFixed(0);
 }
 
 //Change the quantity of each item and update the shopping basket//
