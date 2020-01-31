@@ -57,7 +57,7 @@ function quantityChanged(event) {
    };
   }
   document.getElementsByClassName("things")[0].innerText = 
-  ("color " + ' ' +  quantityInputs.length + ' ' + "Qty:" + ' ' + input.value) ;
+  ("colors: " + ' ' +  quantityInputs.length + ' ' + "Qty:" + ' ' + input.value) ;
 
   updateSbTotal();
 }
