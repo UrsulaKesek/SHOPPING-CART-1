@@ -51,14 +51,14 @@ function quantityChanged(event) {
   if (isNaN(input.value) || input.value <= -1) {
     input.value = 0;
   }
-  for (let i=0; i < quantityInputs.length; i++){
-   if (quantityInputs.length > 1){
-     return (i);
-   };
+  for (let i = 0; i < quantityInputs.length; i++) {
+    if (quantityInputs.length > 1) {
+      return i;
+    }
+    console.log(quantityInputs.length);
   }
-  document.getElementsByClassName("things")[0].innerText = 
-  ("colors: " + ' ' +  quantityInputs.length + ' ' + "Qty:" + ' ' + input.value) ;
-
+  document.getElementsByClassName("things")[0].innerText =
+    "colors: " + " " + quantityInputs.length + " " + "Qty:" + " " + input.value;
   updateSbTotal();
 }
 
