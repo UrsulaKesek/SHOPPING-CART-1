@@ -30,14 +30,13 @@ function updateSbTotal() {
     console.log(price);
 
     let quantity = qtyElement.value;
+    console.log(quantity);
     console.log(price * quantity);
     total = total + price * quantity;
   }
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-price")[0].innerText =
     "£" + total.toFixed(2);
-    document.getElementsByClassName("things")[0].innerText =
-     (total.toFixed(2)/6.99).toFixed(0);
 }
 
 //Change the quantity of each item and update the shopping basket//
@@ -45,7 +44,6 @@ let quantityInputs = document.getElementsByClassName("sb-qty-input");
 for (let i = 0; i < quantityInputs.length; i++) {
   let input = quantityInputs[i];
   input.addEventListener("change", quantityChanged);
-
 }
 
 function quantityChanged(event) {
@@ -53,6 +51,12 @@ function quantityChanged(event) {
   if (isNaN(input.value) || input.value <= -1) {
     input.value = 0;
   }
+  for (let i=0; i < quantityInputs.length; i++){
+    quantityInputs[i] = 0;
+  }
+  document.getElementsByClassName("things")[0].innerText = 
+  (quantityInputs.value + input.value);
+
   updateSbTotal();
 }
 
