@@ -51,16 +51,16 @@ function quantityChanged(event) {
   if (isNaN(input.value) || input.value <= -1) {
     input.value = 0;
   }
+
   for (let i = 0; i < quantityInputs.length; i++) {
     if (quantityInputs.length < 1) {
-      return i + input.value;
+      return i ;
     }
-
     console.log(quantityInputs.length);
   }
   document.getElementsByClassName("things")[0].innerText =
-    "items: " + " " + quantityInputs.length + " " + "Qty:" + " " + input.value;
-
+    "Items: " + " " + quantityInputs.length + " " + "Qty: " + " " + input.value;
+    
   updateSbTotal();
 }
 
