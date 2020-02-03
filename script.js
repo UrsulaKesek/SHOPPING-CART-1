@@ -1,5 +1,10 @@
+if (document.readyState == "loading"){
+  document.addEventListener("DOMContentLoaded",ready)
+}else{
+  ready()
+}
 //remove items from the shopping basket//
-
+function ready(){
 let removeSbItemButtons = document.getElementsByClassName("remove");
 console.log(removeSbItemButtons);
 
@@ -146,4 +151,5 @@ function addItemToSb(imgSrc, item, price) {
   sbRow
     .getElementsByClassName("sb-qty-input")[0]
     .addEventListener("change", quantityChanged);
+}
 }
