@@ -90,6 +90,7 @@ function purchaseClicked() {
   while (basket.hasChildNodes()) {
     basket.removeChild(basket.firstChild);
   }
+
   updateSbTotal();
 }
 //Add items to the shopping basket and update the total//
