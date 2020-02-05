@@ -138,7 +138,7 @@
   }
   .shopping {
     background-color: rgb(250, 246, 148);
-    height: 1800px;
+    height: 1500px;
   }
   .shopping h2 {
     background-color: #fa0477;
@@ -146,6 +146,8 @@
     padding: 10px 20px;
     text-align: center;
   }
+    
+  
   a.cart {
     background-color: rgba(249, 6, 119, 1);
     text-decoration: none;
@@ -212,7 +214,7 @@
   }
   .sb-itemFT {
     width: 40%;
-    font-size: small;
+    font-size:small;
   }
   .sb-price {
     width: 10%;
@@ -269,7 +271,7 @@
     text-align: center;
   }
   .extrainfo {
-    height: 900px;
+    height: 400px;
   }
   .extrainfo p {
     background-color: rgba(249, 6, 119, 1);
