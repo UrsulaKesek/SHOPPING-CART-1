@@ -41,7 +41,7 @@ function ready() {
       total = total + price * quantity;
       console.log(total.toFixed(2));
 
-      itemsTotal = total.toFixed(2)/price;
+      itemsTotal = itemsTotal + quantity;
       console.log(itemsTotal);
     }
     total = Math.round(total * 100) / 100;
