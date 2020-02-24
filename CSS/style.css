@@ -352,6 +352,7 @@ a.cart:hover {
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration: none;
   vertical-align: middle;
+  outline:none;
 }
 .add:hover {
   border-top-color: #039225;
@@ -389,6 +390,7 @@ a.cart:hover {
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration: none;
   vertical-align: middle;
+  outline:none;
 }
 .remove:hover {
   border-top-color: #039225;

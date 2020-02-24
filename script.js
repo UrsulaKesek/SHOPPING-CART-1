@@ -1,131 +1,131 @@
-if (document.readyState == "loading"){
-  document.addEventListener("DOMContentLoaded",ready)
-}else{
-  ready()
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
 }
 //remove items from the shopping basket//
-function ready(){
-let removeSbItemButtons = document.getElementsByClassName("remove");
-console.log(removeSbItemButtons);
+function ready() {
+  let removeSbItemButtons = document.getElementsByClassName("remove");
+  console.log(removeSbItemButtons);
 
-for (let i = 0; i < removeSbItemButtons.length; i++) {
-  let button = removeSbItemButtons[i];
-  button.addEventListener("click", removeSbItem);
-}
-console.log("clicked");
-
-function removeSbItem(event) {
-  let buttonClicked = event.target;
-  buttonClicked.parentElement.parentElement.remove();
-  updateSbTotal();
-}
-//Update Shopping Basket Total//
-
-function updateSbTotal() {
-  let shoppingBasket = document.getElementsByClassName("basket")[0];
-  let sbRows = shoppingBasket.getElementsByClassName("sb-row");
-  let total = 0;
-  for (let i = 0; i < sbRows.length; i++) {
-    let sbRow = sbRows[i];
-    let priceElement = sbRow.getElementsByClassName("sb-price")[0];
-    let qtyElement = sbRow.getElementsByClassName("sb-qty-input")[0];
-    console.log(priceElement, qtyElement);
-
-    let price = parseFloat(priceElement.innerText.replace("£", ""));
-    console.log(price);
-
-    let quantity = qtyElement.value;
-    console.log(quantity);
-    console.log(price * quantity);
-    total = total + price * quantity;
+  for (let i = 0; i < removeSbItemButtons.length; i++) {
+    let button = removeSbItemButtons[i];
+    button.addEventListener("click", removeSbItem);
   }
-  total = Math.round(total * 100) / 100;
-  document.getElementsByClassName("total-price")[0].innerText =
-    "£" + total.toFixed(2);
-}
+  console.log("clicked");
 
-//Change the quantity of each item and update the shopping basket//
-let quantityInputs = document.getElementsByClassName("sb-qty-input");
-for (let i = 0; i < quantityInputs.length; i++) {
-  let input = quantityInputs[i];
-  input.addEventListener("change", quantityChanged);
-}
-
-function quantityChanged(event) {
-  let input = event.target;
-  if (isNaN(input.value) || input.value <= -1) {
-    input.value = 0;
-  }
-
-  for (let i = 0; i < quantityInputs.length; i++) {
-    if (quantityInputs.length < 1) {
-      return i ;
-    }
-    console.log(quantityInputs.length);
-  }
-  document.getElementsByClassName("things")[0].innerText =
-    "Items: " + " " + quantityInputs.length + " " + "Qty: " + " " + input.value;
-    
-  updateSbTotal();
-}
-
-//Add items to the shopping basket and update the shopping basket//
-
-let addToSbButtons = document.getElementsByClassName("add");
-for (let i = 0; i < addToSbButtons.length; i++) {
-  let button = addToSbButtons[i];
-  button.addEventListener("click", addToSbClicked);
-}
-updateSbTotal();
-
-//Buy the items,clear the basket and leave a "thank you" message//
-
-document
-  .getElementsByClassName("purchase")[0]
-  .addEventListener("click", purchaseClicked);
-
-function purchaseClicked() {
-  alert("THANK YOU. COME BACK SOON!");
-  let basket = document.getElementsByClassName("basket")[0];
-  while (basket.hasChildNodes()) {
-    basket.removeChild(basket.firstChild);
-  }
-
-  updateSbTotal();
-}
-//Add items to the shopping basket and update the total//
-
-function addToSbClicked(event) {
-  let button = event.target;
-  let basket = button.parentElement.parentElement;
-  let imgSrc = basket.getElementsByClassName("sb-image")[0].src;
-  let item = basket.getElementsByClassName("sb-itemFT")[0].innerText;
-  let price = basket.getElementsByClassName("sb-price")[0].innerText;
-  console.log(imgSrc, item, price);
-
-  addItemToSb(imgSrc, item, price);
-
-  updateSbTotal();
-}
-/*creates items in the shopping basket and lets you know 
-if an item is already there, and update the basket*/
-
-function addItemToSb(imgSrc, item, price) {
-  let sbRow = document.createElement("div");
-  sbRow.classList.add("sb-row");
-  let sbItems = document.getElementsByClassName("basket")[0];
-  let sbItemNames = sbItems.getElementsByClassName("sb-itemFT");
-  for (let i = 0; i < sbItemNames.length; i++) {
-    if (sbItemNames[i].innerText == item) {
-      alert("This item is already in your shopping basket");
-      return;
-    }
+  function removeSbItem(event) {
+    let buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.remove();
     updateSbTotal();
   }
-  /*creates an item in the shopping basket which can be removed or have it's
+  //Update Shopping Basket Total//
+
+  function updateSbTotal() {
+    let shoppingBasket = document.getElementsByClassName("basket")[0];
+    let sbRows = shoppingBasket.getElementsByClassName("sb-row");
+    let total = 0;
+    let itemsTotal = 0;
+    for (let i = 0; i < sbRows.length; i++) {
+      let sbRow = sbRows[i];
+      let priceElement = sbRow.getElementsByClassName("sb-price")[0];
+      let qtyElement = sbRow.getElementsByClassName("sb-qty-input")[0];
+      console.log(priceElement, qtyElement);
+
+      let price = parseFloat(priceElement.innerText.replace("£", ""));
+      console.log(price);
+
+      let quantity = qtyElement.value;
+      console.log(quantity);
+      console.log(price * quantity);
+      total = total + price * quantity;
+      console.log(total.toFixed(2));
+
+      itemsTotal = total.toFixed(2)/price;
+      console.log(itemsTotal);
+    }
+    total = Math.round(total * 100) / 100;
+    document.getElementsByClassName("total-price")[0].innerText =
+      "£" + total.toFixed(2);
+    document.getElementsByClassName("things")[0].innerText =
+      "Items: " + " " + itemsTotal;
+  }
+
+  //Change the quantity of each item and update the shopping basket//
+  let quantityInputs = document.getElementsByClassName("sb-qty-input");
+  for (let i = 0; i < quantityInputs.length; i++) {
+    let input = quantityInputs[i];
+    input.addEventListener("change", quantityChanged);
+  }
+
+  function quantityChanged(event) {
+    let input = event.target;
+    if (isNaN(input.value) || input.value <= -1) {
+      input.value = 0;
+    }
+
+    document.getElementsByClassName("things")[0].innerText = "Items: " + " ";
+
+    updateSbTotal();
+  }
+
+  //Add items to the shopping basket and update the shopping basket//
+
+  let addToSbButtons = document.getElementsByClassName("add");
+  for (let i = 0; i < addToSbButtons.length; i++) {
+    let button = addToSbButtons[i];
+    button.addEventListener("click", addToSbClicked);
+  }
+  updateSbTotal();
+
+  //Buy the items,clear the basket and leave a "thank you" message//
+
+  document
+    .getElementsByClassName("purchase")[0]
+    .addEventListener("click", purchaseClicked);
+
+  function purchaseClicked() {
+    alert("THANK YOU. COME BACK SOON!");
+    let basket = document.getElementsByClassName("basket")[0];
+    while (basket.hasChildNodes()) {
+      basket.removeChild(basket.firstChild);
+    }
+
+    updateSbTotal();
+  }
+  //Add items to the shopping basket and update the total//
+
+  function addToSbClicked(event) {
+    let button = event.target;
+    let basket = button.parentElement.parentElement;
+    let imgSrc = basket.getElementsByClassName("sb-image")[0].src;
+    let item = basket.getElementsByClassName("sb-itemFT")[0].innerText;
+    let price = basket.getElementsByClassName("sb-price")[0].innerText;
+    console.log(imgSrc, item, price);
+
+    addItemToSb(imgSrc, item, price);
+
+    updateSbTotal();
+  }
+  /*creates items in the shopping basket and lets you know 
+if an item is already there, and update the basket*/
+
+  function addItemToSb(imgSrc, item, price) {
+    let sbRow = document.createElement("div");
+    sbRow.classList.add("sb-row");
+    let sbItems = document.getElementsByClassName("basket")[0];
+    let sbItemNames = sbItems.getElementsByClassName("sb-itemFT");
+    for (let i = 0; i < sbItemNames.length; i++) {
+      if (sbItemNames[i].innerText == item) {
+        alert("This item is already in your shopping basket");
+        return;
+      }
+      updateSbTotal();
+    }
+    /*creates an item in the shopping basket which can be removed or have it's
   quantity changed*/
 
-  let sbContents = `
+    let sbContents = `
     <div class="sb-itemFT sb-column">
       <img
         class="sb-image1"
@@ -143,14 +143,14 @@ function addItemToSb(imgSrc, item, price) {
     </div>
   </div>
     `;
-  sbRow.innerHTML = sbContents;
-  sbItems.append(sbRow);
+    sbRow.innerHTML = sbContents;
+    sbItems.append(sbRow);
 
-  sbRow
-    .getElementsByClassName("remove")[0]
-    .addEventListener("click", removeSbItem);
-  sbRow
-    .getElementsByClassName("sb-qty-input")[0]
-    .addEventListener("change", quantityChanged);
-}
+    sbRow
+      .getElementsByClassName("remove")[0]
+      .addEventListener("click", removeSbItem);
+    sbRow
+      .getElementsByClassName("sb-qty-input")[0]
+      .addEventListener("change", quantityChanged);
+  }
 }
