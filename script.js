@@ -40,15 +40,15 @@ function ready() {
       console.log(price * quantity);
       total = total + price * quantity;
       console.log(total.toFixed(2));
-
       itemsTotal = itemsTotal + quantity;
       console.log(itemsTotal);
+
     }
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName("total-price")[0].innerText =
       "£" + total.toFixed(2);
-    document.getElementsByClassName("things")[0].innerText =
-      "Items: " + " " + itemsTotal;
+      document.getElementsByClassName("things")[0].innerHTML = "Items: " + " " + itemsTotal;
+
   }
 
   //Change the quantity of each item and update the shopping basket//
@@ -64,7 +64,6 @@ function ready() {
       input.value = 0;
     }
 
-    document.getElementsByClassName("things")[0].innerText = "Items: " + " ";
 
     updateSbTotal();
   }
