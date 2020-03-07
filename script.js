@@ -25,31 +25,40 @@ function ready() {
     let shoppingBasket = document.getElementsByClassName("basket")[0];
     let sbRows = shoppingBasket.getElementsByClassName("sb-row");
     let total = 0;
-    let itemsTotal = 0;
+    let  totalItem = 0;
     for (let i = 0; i < sbRows.length; i++) {
       let sbRow = sbRows[i];
       let priceElement = sbRow.getElementsByClassName("sb-price")[0];
       let qtyElement = sbRow.getElementsByClassName("sb-qty-input")[0];
       console.log(priceElement, qtyElement);
-
       let price = parseFloat(priceElement.innerText.replace("£", ""));
       console.log(price);
-
       let quantity = qtyElement.value;
       console.log(quantity);
       console.log(price * quantity);
       total = total + price * quantity;
       console.log(total.toFixed(2));
-      itemsTotal = itemsTotal + quantity;
-      console.log(itemsTotal);
+      totalItem = totalItem + quantity;
+      console.log(totalItem);
+      let str = totalItem;
+      let newTotalItem = str.split('');
+      console.log(newTotalItem);
 
+      let newTotalItemSum = Array.from (newTotalItem.reduce(function(a,b){
+        return a+b;
+      }));
+      console.log(newTotalItemSum);
     }
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName("total-price")[0].innerText =
       "£" + total.toFixed(2);
-      document.getElementsByClassName("things")[0].innerHTML = "Items: " + " " + itemsTotal;
+  
+    document.getElementsByClassName("things")[0].innerText=
+    "Items" + totalItem;
 
-  }
+      }
+      
+
 
   //Change the quantity of each item and update the shopping basket//
   let quantityInputs = document.getElementsByClassName("sb-qty-input");
@@ -63,7 +72,6 @@ function ready() {
     if (isNaN(input.value) || input.value <= -1) {
       input.value = 0;
     }
-
 
     updateSbTotal();
   }
