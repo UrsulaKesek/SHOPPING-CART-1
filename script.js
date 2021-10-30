@@ -25,7 +25,7 @@ function ready() {
     let shoppingBasket = document.getElementsByClassName("basket")[0];
     let sbRows = shoppingBasket.getElementsByClassName("sb-row");
     let total = 0;
-    let  totalItem = 0;
+    let totalItem = 0;
     for (let i = 0; i < sbRows.length; i++) {
       let sbRow = sbRows[i];
       let priceElement = sbRow.getElementsByClassName("sb-price")[0];
@@ -38,27 +38,11 @@ function ready() {
       console.log(price * quantity);
       total = total + price * quantity;
       console.log(total.toFixed(2));
-      totalItem = totalItem + quantity;
-      console.log(totalItem);
-      let str = totalItem;
-      let newTotalItem = str.split('');
-      console.log(newTotalItem);
-
-      let newTotalItemSum = Array.from (newTotalItem.reduce(function(a,b){
-        return a+b;
-      }));
-      console.log(newTotalItemSum);
     }
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName("total-price")[0].innerText =
       "£" + total.toFixed(2);
-  
-    document.getElementsByClassName("things")[0].innerText=
-    "Items" + totalItem;
-
-      }
-      
-
+  }
 
   //Change the quantity of each item and update the shopping basket//
   let quantityInputs = document.getElementsByClassName("sb-qty-input");
