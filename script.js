@@ -130,7 +130,7 @@ if an item is already there, and update the basket*/
     <span class="sb-price sb-column">${price}</span>
     <div class="sb-qty sb-column">
       <input class="sb-qty-input" type="number" value="1" />
-      <button class="remove"> - </button>
+      <button class="remove"> remove </button>
     </div>
   </div>
     `;
