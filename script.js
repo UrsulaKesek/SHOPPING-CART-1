@@ -41,7 +41,7 @@ function ready() {
     }
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName("total-price1")[0].innerText =
-      "£" + total.toFixed(2);
+      "Total:£" + total.toFixed(2);
     document.getElementsByClassName("total-price")[0].innerText =
       "£" + total.toFixed(2);
   }

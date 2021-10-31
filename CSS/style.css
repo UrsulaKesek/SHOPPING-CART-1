@@ -277,6 +277,7 @@ a.cart:hover {
 .total-price1 {
   position: relative;
   left: 30px;
+  top: 20px;
   font-size: 32px;
 }
 .sb-total h3 {
