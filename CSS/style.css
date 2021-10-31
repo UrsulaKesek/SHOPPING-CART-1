@@ -79,7 +79,10 @@ nav a:hover {
   align-items: center;
   width: 100%;
 }
-
+.cartimg {
+  position: relative;
+  left: 30px;
+}
 .yarns1 {
   background: -webkit-gradient(
     linear,
@@ -166,6 +169,7 @@ a.cart:hover {
   color: white;
 }
 .things {
+  margin-left: 70px;
   background-color: rgba(249, 6, 119, 0.57);
   border: 3px solid rgb(249, 6, 119);
   border-radius: 50px;
@@ -184,6 +188,7 @@ a.cart:hover {
   display: flex;
   flex-direction: row;
   height: 80px;
+  width: 450px;
   background-color: rgba(255, 255, 0, 0.7);
   border: 2px solid yellow;
   margin: 10px;
@@ -269,6 +274,11 @@ a.cart:hover {
   text-align: center;
   cursor: pointer;
 }
+.total-price1 {
+  position: relative;
+  left: 30px;
+  font-size: 32px;
+}
 .sb-total h3 {
   font-weight: bold;
   background: -webkit-gradient(
@@ -352,7 +362,7 @@ a.cart:hover {
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration: none;
   vertical-align: middle;
-  outline:none;
+  outline: none;
 }
 .add:hover {
   border-top-color: #039225;
@@ -390,7 +400,7 @@ a.cart:hover {
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration: none;
   vertical-align: middle;
-  outline:none;
+  outline: none;
 }
 .remove:hover {
   border-top-color: #039225;
