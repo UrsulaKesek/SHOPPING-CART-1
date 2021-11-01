@@ -44,6 +44,8 @@ function ready() {
       "Total:£" + total.toFixed(2);
     document.getElementsByClassName("total-price")[0].innerText =
       "£" + total.toFixed(2);
+    document.getElementsByClassName("things")[0].innerText =
+      quantityInputs.length;
   }
 
   //Change the quantity of each item and update the shopping basket//
